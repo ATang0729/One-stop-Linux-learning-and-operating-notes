@@ -33,7 +33,7 @@
     conda init
     ```
 
-    <figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>successfully initialized</p></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>successfully initialized</p></figcaption></figure>
 7. Close and re-open your terminal window for the installation to take effect, or enter the command `source ~/.bashrc` to refresh the terminal.
 8.  You can also control whether or not your shell has the base environment activated each time it opens.
 
