@@ -31,6 +31,20 @@
        <figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>connect VSC with linux server</p></figcaption></figure>
    3. For more information, refer to [this](https://learn.microsoft.com/zh-cn/windows/wsl/install#ways-to-run-multiple-linux-distributions-with-wsl).
 
+### Migration
+
+By default, WSL and Ubuntu will be installed on `C:\`. In this section, you will learn how to transfer these two parts to other disks.
+
+1. **Deactivate**: use `wsl -l --all -v` to view the states of all distributions and use `wsl --shutdown` to stop the running ones&#x20;
+2. **Backup**: use `wsl --export <name> <backup path>`
+3. **Unregister**: use `wsl --unregister <name>`
+4.  **Restore**: use `wsl --import <name> <restore dir> <backup path> [--version 2]` and you can see the VHDX file of Ubuntu present in your restore dir. (see the below figure)
+
+    <figure><img src="../.gitbook/assets/1706724151311.jpg" alt=""><figcaption><p>Successfully migrated</p></figcaption></figure>
+5.  **Set default user**: after importing and starting the Ubuntu backup, you may find the default user is root. Although you can change the default user of a distribution by `<distribution name> config --default-user <user name>` in cmd, _it doesn't work for imported distributions_. But you can do that by modifying `/etc/wsl.conf` in Ubuntu (see the figure below) \[[Reference](https://learn.microsoft.com/zh-cn/windows/wsl/wsl-config#wslconf)]. Besides, you can cahnge user temporarily by using `su <user name>` in Ubuntu or `wsl --user <user name>` in cmd
+
+    <figure><img src="../.gitbook/assets/637833d5f9ee8c8abcd9523fd9755462.png" alt="" width="530"><figcaption></figcaption></figure>
+
 ## Additions
 
 1.  If you counter error 0x800701bc, the tutorials below are recommended for your&#x20;
