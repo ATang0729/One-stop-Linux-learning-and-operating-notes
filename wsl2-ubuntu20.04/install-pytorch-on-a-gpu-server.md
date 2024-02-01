@@ -78,7 +78,14 @@ sudo apt update
 sudo apt install build-essential
 ```
 
-use&#x20;
+use `gcc --version` to verify whether gcc has been successfully install. The default version of GCC available in the Ubuntu 20.04 is 9.3.0:&#x20;
+
+```
+gcc (Ubuntu 9.3.0-10ubuntu2) 9.3.0
+Copyright (C) 2019 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+```
 
 ## References
 
