@@ -4,7 +4,7 @@ description: >-
   note, I take install torch==1.10.1+cu113 for example.
 ---
 
-# 🛤 Install Pytorch on a GPU Server
+# 🛤️ Install Pytorch on a GPU Server
 
 ## Instructions
 
@@ -60,6 +60,17 @@ In this case, I use:
 ```bash
 pip install torch==1.10.1+cu113 torchvision==0.11.2+cu113 torchaudio==0.10.1 -f https://download.pytorch.org/whl/cu113/torch_stable.html
 ```
+
+where `1.10.1` refers to the version of torch and `cu113` refers to the **lowest** version of CUDA that the torch supports.
+
+After installation, use the following code to check whether pytorch is available on your GPU server:
+
+```python
+import torch
+print(torch.cuda.is_available())
+```
+
+The return `True` is expected. If `False` is returned, check your installation steps!
 
 ## Additions
 
