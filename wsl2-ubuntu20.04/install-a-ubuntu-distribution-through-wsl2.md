@@ -1,4 +1,4 @@
-# 🛠 Install a Ubuntu Distribution through WSL2
+# 🛠️ Install a Ubuntu Distribution through WSL2
 
 wsl:star\_struck:In this note, we are going to learn how to install WSL2. If you want to learn about the differences between WSL2 and WSL1, please refer to [this official docs](https://learn.microsoft.com/zh-cn/windows/wsl/compare-versions?source=recommendations). For more information, please refer to [references](install-a-ubuntu-distribution-through-wsl2.md#references).
 
@@ -31,7 +31,16 @@ wsl:star\_struck:In this note, we are going to learn how to install WSL2. If you
        <figure><img src="../.gitbook/assets/vsc.png" alt=""><figcaption><p>connect VSC with linux server</p></figcaption></figure>
    3. For more information, refer to [this](https://learn.microsoft.com/zh-cn/windows/wsl/install#ways-to-run-multiple-linux-distributions-with-wsl).
 
+### Quit and Stop
+
+* When in a WSL, you can use `ctrl+D` or `logout` to go back to powershell or cmd.
+* Use `wsl --shutdown [distribution name]` to stop the running WSL.
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
 ### Migration
+
+> Reference: [如何对WSL2进行备份与还原](https://zhuanlan.zhihu.com/p/536686)
 
 By default, WSL and Ubuntu will be installed on `C:\`. In this section, you will learn how to transfer these two parts to other disks.
 
@@ -41,7 +50,7 @@ By default, WSL and Ubuntu will be installed on `C:\`. In this section, you will
 4.  **Restore**: use `wsl --import <name> <restore dir> <backup path> [--version 2]` and you can see the VHDX file of Ubuntu present in your restore dir. (see the below figure)
 
     <figure><img src="../.gitbook/assets/restore.jpg" alt=""><figcaption><p>Successfully migrated</p></figcaption></figure>
-5.  **Set default user**: after importing and starting the Ubuntu backup, you may find the default user is root. Although you can change the default user of a distribution by `<distribution name> config --default-user <user name>` in cmd, _it doesn't work for imported distributions_. But you can do that by modifying `/etc/wsl.conf` in Ubuntu (see the figure below) \[[Reference](https://learn.microsoft.com/zh-cn/windows/wsl/wsl-config#wslconf)]. Besides, you can cahnge user temporarily by using `su <user name>` in Ubuntu or `wsl --user <user name>` in cmd
+5.  **Set default user**: after importing and starting the Ubuntu backup, you may find the default user is root. Although you can change the default user of a distribution by `<distribution name> config --default-user <user name>` in cmd, _it doesn't work for imported distributions_. But you can do that by modifying `/etc/wsl.conf` in Ubuntu (see the figure below) \[[Reference](https://learn.microsoft.com/zh-cn/windows/wsl/wsl-config#wslconf)]. Besides, you can change user temporarily by using `su <user name>` in Ubuntu or `wsl --user <user name>` in cmd
 
     <figure><img src="../.gitbook/assets/set default user.png" alt="" width="530"><figcaption></figcaption></figure>
 

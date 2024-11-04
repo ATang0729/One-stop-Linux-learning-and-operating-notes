@@ -74,6 +74,16 @@ The return `True` is expected. If `False` is returned, check your installation s
 
 ## Additions
 
+```python
+import torch
+print(torch.__version__)  # view torch version
+print(torch.cuda.is_available()) # view whether CUDA is available
+print(torch.cuda.device_count()) # view number of available GPU
+print(torch.version.cuda) # view CUDA version
+```
+
+## Additions
+
 ### ERROR: Missing gcc. gcc is required to continue.
 
 When install CUDA following official instructions with runfile (local), the following error may occur:
